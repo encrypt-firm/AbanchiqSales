@@ -73,7 +73,7 @@ function App() {
           element: <div className="Home"><Products /></div>
         },
         {
-          path: "/dashboard/profile/:id",
+          path: "/dashboard/courses/:id",
           element: <div className="Home">Profile</div>
         },
         {
