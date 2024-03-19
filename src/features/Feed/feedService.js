@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'https://abanchiqschoolapi.onrender.com/api/auth/adminstration/lecs';
+const API_URL = 'https://abanchiqschoolapi.onrender.com/api/auth/adminstration/sales';
 
 export const addPost = async (postData, token) => {
     try {
@@ -12,7 +12,7 @@ export const addPost = async (postData, token) => {
         return response.data;
     } catch (error) {
         if (error.response) {
-            const message = `An error has occurred: ${error.response.status}`;
+            const message = `I don't think you are Authorized ${error.response.status}`;
             throw new Error(message);
         } else if (error.request) {
             console.error("The request was made but no response was received");
