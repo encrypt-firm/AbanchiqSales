@@ -53,8 +53,9 @@ function Register() {
 
     useEffect(() => {
         if (isSuccess || user) {
-            toast.success("Verification link sent to email! Please verify your account.")
-            navigate("/")
+            toast.success("Please check your email for verification link!");
+            localStorage.removeItem('user');
+            navigate("/login")
             // dispatch(reset());
         }
     }, [isSuccess, user, navigate, dispatch]);
