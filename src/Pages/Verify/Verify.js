@@ -18,11 +18,7 @@ function Verify() {
         }
     }, [dispatch, token]);
 
-    useEffect(() => {
-        return () => {
-            dispatch(reset());
-        };
-    }, [dispatch]);
+
 
     useEffect(() => {
         if (isError) {
@@ -34,6 +30,12 @@ function Verify() {
             setTimeout(() => navigate('/'), 4000);
         }
     }, [isSuccess, isError, message, navigate]);
+
+    useEffect(() => {
+        return () => {
+            dispatch(reset());
+        };
+    }, [dispatch]);
 
     return (
         <div className='verify'>

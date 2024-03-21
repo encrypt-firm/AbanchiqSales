@@ -55,6 +55,12 @@ function Header() {
         }
     })
 
+    useEffect(() => {
+        return () => {
+            dispatch(reset());
+        };
+    }, [dispatch]);
+
 
     return (
         <div className='Header'>
@@ -84,8 +90,11 @@ function Header() {
                         {user ? (
                             <>
                                 <div className='userName' onClick={() => setShowMenuIcon(!showMenuIcon)}>
-                                    <img src={user.profilePicture.url} alt="profile" />
+                                    {user && user.profilePicture && user.profilePicture.url && (
+                                        <img src={user.profilePicture.url} alt="profile" />
+                                    )}
                                 </div>
+
                                 {showMenuIcon && (
                                     <div ref={menuRef} className="menuIcon">
                                         <Link><button onClick={onLogout}>Logout</button></Link>

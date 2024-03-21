@@ -1,14 +1,13 @@
 // react.js
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import './login.css';
 import { reset, resetPasswordData } from '../../features/Auth/authSlice';
 import { toast } from 'react-toastify';
 import { useDispatch, useSelector } from 'react-redux';
 import Spinner from '../../Components/Spinner/Spinner';
 import { CiFacebook } from "react-icons/ci";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai"
-
+import './login.css'
 
 function ResetPassword() {
     const { token } = useParams();
@@ -60,10 +59,10 @@ function ResetPassword() {
         <div className="Login">
             <form onSubmit={onSubmit}>
                 <div className="contanier">
-                    <h1>Hello Again!</h1>
+                    {/* <h1>Hello Again..!</h1> */}
                     <h1>Almost there...</h1>
                     <h1>Let's get a new password</h1>
-                    <div className="login">
+                    <div className="login resetPasswordInput">
                         <label id="passLabel">Type New Password</label>
                         <input className="pwInput"
                             // type="password"

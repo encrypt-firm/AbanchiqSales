@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import './Home.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchAllFeedsAsync } from '../../features/Feed/feedSlice';
+import { fetchAllFeedsAsync, reset } from '../../features/Feed/feedSlice';
 import Spinner from '../Spinner/Spinner';
 import { useNavigate } from 'react-router-dom';
 
@@ -12,11 +12,19 @@ const Home = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
+        return () => {
+            dispatch(reset());
+        };
+    }, [dispatch]);
+
+    useEffect(() => {
         dispatch(fetchAllFeedsAsync());
         if (!user) {
             navigate('/login');
         }
     }, [dispatch, user, navigate]);
+
+
 
     if (isLoading) {
         return <Spinner />;
@@ -25,6 +33,7 @@ const Home = () => {
     if (!user) {
         return null;
     }
+
 
     const userProfile = user?.profilePicture;
     return (

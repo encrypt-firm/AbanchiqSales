@@ -1,0 +1,20 @@
+.resetPasswordInput input {
+  padding: 1rem !important;
+  background: rgb(255, 255, 255);
+  border: none;
+  margin: 0 1rem;
+  border-radius: 5px;
+  align-items: center;
+  /* display: flex; */
+  outline: none;
+  justify-content: center;
+  /* align-items: center; */
+}
+/* .resetPasswordInput input::placeholder {
+    color: purple;
+} */
+
+.resetPasswordInput .eye {
+  cursor: pointer;
+  font-size: 20px;
+}
